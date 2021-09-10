@@ -1,0 +1,1709 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeAnalysis.Analyzers.3.3.2\build\Microsoft.CodeAnalysis.Analyzers.props" Condition="Exists('packages\Microsoft.CodeAnalysis.Analyzers.3.3.2\build\Microsoft.CodeAnalysis.Analyzers.props')" />
+  <Import Project="packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7AA931C0-D79F-4455-B7EC-D877E6CA96F7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SISCOFIN_v1</RootNamespace>
+    <AssemblyName>SISCOFIN v1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis, Version=3.11.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.CodeAnalysis.Common.3.11.0\lib\netstandard2.0\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=3.11.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.CodeAnalysis.CSharp.3.11.0\lib\netstandard2.0\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Scripting, Version=3.11.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.CodeAnalysis.CSharp.Scripting.3.11.0\lib\netstandard2.0\Microsoft.CodeAnalysis.CSharp.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Scripting, Version=3.11.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.CodeAnalysis.Scripting.Common.3.11.0\lib\netstandard2.0\Microsoft.CodeAnalysis.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Collections.Immutable.5.0.0\lib\net461\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.EF6.1.0.113.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.Linq.1.0.113.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Reflection.Metadata.5.0.0\lib\net461\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encoding.CodePages.4.5.1\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountManager.Designer.cs">
+      <DependentUpon>AccountManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Account.cs" />
+    <Compile Include="AccountType.cs" />
+    <Compile Include="Address.cs" />
+    <Compile Include="AddressAssistent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddressAssistent.Designer.cs">
+      <DependentUpon>AddressAssistent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BillClosingDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BillClosingDate.Designer.cs">
+      <DependentUpon>BillClosingDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Card.cs" />
+    <Compile Include="CardType.cs" />
+    <Compile Include="CloseCreditBills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CloseCreditBills.Designer.cs">
+      <DependentUpon>CloseCreditBills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreditBillPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreditBillPayment.Designer.cs">
+      <DependentUpon>CreditBillPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase.cs" />
+    <Compile Include="DataSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataSettings.Designer.cs">
+      <DependentUpon>DataSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Debt.cs" />
+    <Compile Include="AppWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppWindow.Designer.cs">
+      <DependentUpon>AppWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DebtCategorie.cs" />
+    <Compile Include="DebtType.cs" />
+    <Compile Include="Email.cs" />
+    <Compile Include="EmailAssistent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmailAssistent.Designer.cs">
+      <DependentUpon>EmailAssistent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Globals.cs" />
+    <Compile Include="MyEvents.cs" />
+    <Compile Include="MyMethods.cs" />
+    <Compile Include="CardManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CardManager.Designer.cs">
+      <DependentUpon>CardManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpperationType.cs" />
+    <Compile Include="PeopleManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PeopleManager.Designer.cs">
+      <DependentUpon>PeopleManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Person.cs" />
+    <Compile Include="Phone.cs" />
+    <Compile Include="PhoneAssistent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhoneAssistent.Designer.cs">
+      <DependentUpon>PhoneAssistent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingOptions.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="TagBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TagBox.Designer.cs">
+      <DependentUpon>TagBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="UserManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManager.Designer.cs">
+      <DependentUpon>UserManager.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AccountManager.resx">
+      <DependentUpon>AccountManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddressAssistent.resx">
+      <DependentUpon>AddressAssistent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppWindow.resx">
+      <DependentUpon>AppWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BillClosingDate.resx">
+      <DependentUpon>BillClosingDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CloseCreditBills.resx">
+      <DependentUpon>CloseCreditBills.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreditBillPayment.resx">
+      <DependentUpon>CreditBillPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CardManager.resx">
+      <DependentUpon>CardManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataSettings.resx">
+      <DependentUpon>DataSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmailAssistent.resx">
+      <DependentUpon>EmailAssistent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PeopleManager.resx">
+      <DependentUpon>PeopleManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhoneAssistent.resx">
+      <DependentUpon>PhoneAssistent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TagBox.resx">
+      <DependentUpon>TagBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManager.resx">
+      <DependentUpon>UserManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\Requerimento de Pessoa Física.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Accounts_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Accounts_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Accounts_64X64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AddGreen_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AddGreen_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AddGreen_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AddMoney_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AddMoney_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AddMoney_64X64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Bank_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Bank_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\CashFlow_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\CashFlow_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\CashFlow_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Check_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Check_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Check_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Eraser_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Eraser_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Eraser_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\FinBalance_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\FinBalance_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\FinBalance_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoSantander_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\MoneyUpdate_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\MoneyUpdate_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\MoneyUpdate_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\SaveIcon_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\SaveIcon_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\SaveIcon_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Wallets_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Wallets_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\UserOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\UserOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Refresh_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Refresh_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Refresh_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Close_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Search_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Search_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\BarChart_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\BarChart2_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LineChart2_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\RightArrow1_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LeftArrow1_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\SettingsGreen_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\SearchFile_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Withdraw_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\FastFowardGreen_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LeftArrowGreen_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\RewindGreen_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\RightArrowGreen_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\SettingsGreen_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\FilterGreen_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\CreditCard_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\CreditCard_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoBB_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoBradesco_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoCaixaEconomica_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoItau_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoSantander_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Mastercard_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Visa_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoSantander_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoSantander_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoSantander_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoItau_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoItau_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoItau_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Critical.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Help.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Information.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Warning.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoCaixaEconomica_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoCaixaEconomica_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoCaixaEconomica_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoBradesco_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoBradesco_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoBradesco_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoBB_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoBB_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoBB_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoVASodexo_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoVASodexo_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoVASodexo_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoVASodexo_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoVRSodexo_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoVRSodexo_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoVRSodexo_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoVRSodexo_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoMastercard_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoMastercard_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoMastercard_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoMastercard_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoVisa_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoVisa_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoVisa_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoVisa_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Wallets_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Wallets_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Wallets_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Withdraw_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Withdraw_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Withdraw_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Withdraw_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LedGreen_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LedRed_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Search_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Search_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Search_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\CreditCard_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\CreditCard_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\CreditCard_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Accounts_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AddMoney_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\CashFlow_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\FinBalance_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\FastFowardGreen_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\FastFowardGreen_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\FastFowardGreen_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\FastFowardGreen_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Rewind1_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Rewind1_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Rewind1_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Rewind1_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Next2_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Next2_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Next2_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Next2_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\FastFoward1_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\FastFoward1_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\FastFoward1_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\FastFoward1_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\FastFoward1_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Next1_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Next2_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Previous1_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Rewind1_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Previous2_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Previous2_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Previous2_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Previous2_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Previous2_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\MoneyFlow_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\MoneyFlow_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\MoneyFlow_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\MoneyFlow_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\FilterGreen_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\FilterGreen_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\FilterGreen_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\FilterGreen_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\SettingsGreen_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\SettingsGreen_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\SettingsGreen_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Next1_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Next1_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Previous1_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Previous1_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cliconfg_125.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cliconfg_126.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cliconfg_127.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cliconfg_128.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comres_2855.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comres_2859.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comres_2861.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comres_2862.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comres_2863.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comres_2864.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comres_2866.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comres_2867.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comres_2868.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comres_2869.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comres_2870.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DevicePairingFolder_151.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dfrgui_141.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DxpTaskSync_60.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FirewallControlPanel_2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ieframe_36869.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ieframe_36870.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ieframe_36871.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ieframe_36872.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ieframe_42025.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netshell_1607.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netshell_2300.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netshell_2301.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shell32_44.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wmploc_474.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wmploc_29607.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xpsrchvw_117.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xpsrchvw_119.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xpsrchvw_16074.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aclui_113.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aclui_114.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aclui_127.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CameraBarcodeScannerPreview_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeviceCenter_166.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DevicePairingFolder_200.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dmdskres_360.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dmdskres_361.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dpapimig_64.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExplorerFrame_100.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FirewallControlPanel_1800.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_78.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_89.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_98.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_99.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_104.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_105.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_106.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_107.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1027.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1304.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_1305.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5311.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5315.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imageres_5332.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMEPADSV_207.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMEPADSV_208.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMEPADSV_209.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMEPADSV_210.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MSCAND20_8.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MSCAND20_9.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MSCAND20_10.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MSCAND20_11.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_9263.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_9265.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_9267.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_9269.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_9271.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_9273.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_9275.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_9277.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_9279.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_9281.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_9283.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_9285.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_9287.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_9289.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_9291.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_9293.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_9295.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_9297.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_50134.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_50135.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_50136.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mspaint_50137.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mssvp_508.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mstsc_101.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mstsc_13001.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mstsc_13002.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mstsc_13006.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mstsc_13007.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mstsc_13009.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mstsc_13011.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mycomput_201.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mycomput_203.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mycomput_204.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mycomput_205.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mycomput_222.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ndadmin_101.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netcenter_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netcenter_7.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netcenter_8.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netcenter_14.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netcenter_15.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netcenter_16.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netcenter_17.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netcenter_18.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netcenter_19.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netcenter_22.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netshell_1606.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netshell_1612.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netshell_1613.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\netshell_1614.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prnfldr_139.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prnfldr_168.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prnfldr_5003.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prnfldr_5004.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prnfldr_5005.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prnfldr_5007.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prnntfy_500.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\psr_210.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rasgcw_10013.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shell32_7.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shell32_253.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shell32_255.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shell32_321.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shell32_16761.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wmploc_1171.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wmploc_29511.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wmploc_29520.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wmploc_29654.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wmploc_29655.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comprovante_por_email8576794814788133923.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewDebt_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewDebt_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewDebt_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewDebt_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewDebt_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Vouchers_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Vouchers_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Vouchers_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Vouchers_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Vouchers_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Bank_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Bank_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Bank_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\CashFlow_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Finances_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Finances_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Finances_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Finances_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Finances_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Accounts_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AddMoney_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\MoneyFlow_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Investment_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Investment_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Investment_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Investment_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Investment_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AccountSettings_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AccountSettings_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AccountSettings_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AccountSettings_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AccountSettings_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Minus_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Minus_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Minus_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Plus_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Plus_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Plus_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\StarEmpty_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\StarEmpty_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\StarEmpty_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\StarFull_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\StarFull_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\StarFull_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\StarHalf_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\StarHalf_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\StarHalf_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\StarFaded_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\StarFaded_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\StarFaded_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\StarHalfFaded_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\StarHalfFaded_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\StarHalfFaded_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\EllipsisHorizontal_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\EllipsisHorizontal_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\EllipsisHorizontal_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\EllipsisVertical_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\EllipsisVertical_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\EllipsisVertical_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Share_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Share_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Share_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Link_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Link_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Link_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Contact_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Contact_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Contact_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Contact_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Contact_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\UserInfo_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\UserInfo_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\UserInfo_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\UserInfo_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\UserInfo_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\MenuButtonWhite_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\MenuButtonWhite_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\MenuButtonWhite_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\MenuButtonWhite_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\MenuButtonWhite_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AddFile_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AddFile_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AddFile_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AddFile_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AddFile_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Pencil_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Pencil_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Pencil_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Pencil_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Pencil_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AddCard_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AddCard_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AddCard_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AddCard_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\AddCard_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoSodexo_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoSodexo_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoSodexo_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\LogoSodexo_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\DeleteCard_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\DeleteCard_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\DeleteCard_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\DeleteCard_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\DeleteCard_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Disable_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Disable_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Disable_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Disable_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Disable_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Lock_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Lock_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Lock_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Lock_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Lock_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Unlock_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Unlock_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Unlock_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Unlock_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Unlock_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\RemoveFile_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\RemoveFile_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\RemoveFile_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\RemoveFile_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\RemoveFile_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewAddress_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewAddress_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewAddress_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewAddress_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewAddress_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewEmail_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewEmail_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewEmail_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewEmail_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewEmail_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewPhone_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewPhone_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewPhone_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewPhone_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewPhone_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewDocument_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewDocument_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewDocument_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewDocument_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewDocument_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\People_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\People_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\People_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\People_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\People_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewUser_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewUser_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewUser_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewUser_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\NewUser_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\User_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\User_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\User_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\User_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\User_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\VisibilityOff_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\VisibilityOff_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\VisibilityOff_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\VisibilityOff_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\VisibilityOff_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\VisibilityOn_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\VisibilityOn_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\VisibilityOn_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\VisibilityOn_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\VisibilityOn_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Close_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Close_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Address_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\E-mail_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Phone_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_8x8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gear_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgs\Pencil_10x10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="packages\Microsoft.CodeAnalysis.Analyzers.3.3.2\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="packages\Microsoft.CodeAnalysis.Analyzers.3.3.2\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+    <Error Condition="!Exists('packages\Microsoft.CodeAnalysis.Analyzers.3.3.2\build\Microsoft.CodeAnalysis.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeAnalysis.Analyzers.3.3.2\build\Microsoft.CodeAnalysis.Analyzers.props'))" />
+    <Error Condition="!Exists('packages\Microsoft.CodeAnalysis.Analyzers.3.3.2\build\Microsoft.CodeAnalysis.Analyzers.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeAnalysis.Analyzers.3.3.2\build\Microsoft.CodeAnalysis.Analyzers.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+  <Import Project="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Import Project="packages\Microsoft.CodeAnalysis.Analyzers.3.3.2\build\Microsoft.CodeAnalysis.Analyzers.targets" Condition="Exists('packages\Microsoft.CodeAnalysis.Analyzers.3.3.2\build\Microsoft.CodeAnalysis.Analyzers.targets')" />
+</Project>
